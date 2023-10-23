@@ -1,4 +1,4 @@
-# DiscordRPC
+# Presencium
 ## Descriprion
 This mod show in discord your minecraft status.
 
