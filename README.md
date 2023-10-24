@@ -1,5 +1,5 @@
 # Presencium
-## Descriprion
+### Descriprion
 This mod show in discord your minecraft status.
 
 ![Alt text](https://cdn-raw.modrinth.com/data/iNU1UQcw/images/f05b904ad665d718c6b5e25ce7372bcf99740b96.png)
