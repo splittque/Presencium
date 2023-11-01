@@ -8,6 +8,8 @@ This mod show in discord your minecraft status.
 - English
 - Русский (Russian)
 
+**If you want to support in translation, fill out this form: https://docs.google.com/forms/d/1D6zsJlmOnygzKOgrxNAYOJDfjp5qbaTvWG-ijuOn8Ds**
+
 ## Build
 1. Download a project
 2. Open terminal in the project
