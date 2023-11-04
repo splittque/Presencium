@@ -22,7 +22,7 @@ public class discord {
     }
     public static void stop() {
         presencium.Discord_Shutdown();
-        logger.info("[Presencium] Mod has been disabled!");
+        logger.info("[Presencium] Mod has been stopped!");
     }
     public static void update(String state) {
         presence.details = state;
