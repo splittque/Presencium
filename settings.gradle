@@ -1,9 +1,10 @@
 pluginManagement {
     repositories {
-        maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
-        }
         gradlePluginPortal()
+        maven { url = 'https://maven.fabricmc.net/' }
+        maven {	url = 'https://maven.quiltmc.org/repository/release' }
     }
 }
+
+rootProject.name = 'presencium'
+include 'fabric', 'quilt'
