@@ -25,11 +25,12 @@ public class main implements ModInitializer {
                     state = Text.translatable("realm_state");
                     discord.update(state.getString());
                 }
-                if (config.get("server_ip")) {
+
+                if (config.get()) {
                     String address = client.getCurrentServerEntry().address;
                     state = Text.translatable("multi_state");
                     discord.update(state.getString() + ": " + address);
-                } else if (!config.get("server_ip")) {
+                } else if (!config.get()) {
                     state = Text.translatable("multi_state");
                     discord.update(state.getString());
                 }
