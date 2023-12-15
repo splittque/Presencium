@@ -32,11 +32,11 @@ public class config {
             save();
         }
     }
-    public static void set(String name, boolean value){
-        json.put(name, value);
+    public static void set(boolean value){
+        json.put("server_ip", value);
     }
-    public static boolean get(String name) {
-        boolean value = json.getBoolean(name);
+    public static boolean get() {
+        boolean value = json.getBoolean("server_ip");
         return value;
     }
 }

@@ -9,9 +9,9 @@ import net.minecraft.text.Text;
 public class screen extends SimpleOptionsScreen {
     private static final SimpleOption<Boolean> server_ip = SimpleOption.ofBoolean(
             "server_ip",
-            config.get("server_ip"),
+            config.get(),
             value -> {
-                config.set("server_ip", value);
+                config.set(value);
                 config.save();
             }
     );
