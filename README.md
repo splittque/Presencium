@@ -27,8 +27,8 @@ This mod show in discord your minecraft status
 4. Change the code
 5. For building certain project:
    - fabric: **gradlew fabric:build**
-   - quilt: **gradlew quilt:build**
+   - forge: **gradlew forge:build**
 6. For build all projects type in terminal **gradlew build**
-7. For testing, type in terminal **gradlew downloadAssets**, then:
+7. For testing, type in terminal:
    - fabric: **gradlew fabric:runClient**
-   - quilt: **gradlew quilt:runClient**
+   - _runClient for forge doesn't work_
