@@ -1,0 +1,18 @@
+plugins {
+	id 'java'
+}
+
+subprojects {
+	repositories {
+		jcenter()
+		maven { url = "https://jitpack.io/" }
+		maven { url = "https://maven.terraformersmc.com" }
+	}
+}
+
+project(':fabric') {
+	version = "FABRIC-1.0"
+}
+project(":forge") {
+	version = "FORGE-1.0"
+}
