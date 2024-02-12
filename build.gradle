@@ -11,8 +11,8 @@ subprojects {
 }
 
 project(':fabric') {
-	version = "FABRIC-1.0"
+	version = "FABRIC-1.1"
 }
 project(":forge") {
-	version = "FORGE-1.0"
+	version = "FORGE-1.1"
 }
