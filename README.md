@@ -4,6 +4,8 @@ This mod show in discord your minecraft status
 
 ![Alt text](https://cdn.modrinth.com/data/iNU1UQcw/images/0beca16cf8eb52f9af25c5f3496b4285e231ff81.png)
 
+All languages that are represented in Discord are supported
+
 ### Build
 #### IDE
 1. Download a project
