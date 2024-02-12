@@ -8,7 +8,7 @@ All languages that are represented in Discord are supported
 
 **Required Java 21**
 
-### Build
+## Build
 #### IDE
 1. Download a project
 2. Open project in your IDE
