@@ -6,6 +6,8 @@ This mod show in discord your minecraft status
 
 All languages that are represented in Discord are supported
 
+**Required Java 21**
+
 ### Build
 #### IDE
 1. Download a project
