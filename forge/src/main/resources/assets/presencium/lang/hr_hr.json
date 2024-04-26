@@ -1,0 +1,7 @@
+{
+  "single_state": "U pojedinačnoj igri",
+  "multi_state": "U mrežnoj igri",
+  "realm_state": "U Realms",
+  "main_state": "U igri",
+  "server_ip": "Prikaži IP poslužitelja"
+}
