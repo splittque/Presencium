@@ -1,0 +1,7 @@
+{
+  "single_state": "Dans le solo jeu",
+  "multi_state": "Dans le multijoueur",
+  "realm_state": "Dans le Realms",
+  "main_state": "Dans le jeu",
+  "server_ip": "Afficher l'IP du serveur"
+}
