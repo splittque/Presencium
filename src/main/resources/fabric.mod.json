@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "presencium",
+  "version": "2.0",
+  "name": "Presencium",
+  "description": "Minecraft status in discord!",
+  "authors": [
+    "splittque"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/presencium"
+  },
+  "license": "Creative Commons Zero v1.0 Universal",
+  "icon": "icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "me.splitque.presencium.main"
+    ],
+    "modmenu": [
+      "me.splitque.presencium.config.modmenu"
+    ]
+  },
+  "depends": {
+    "fabricloader": "*",
+    "fabric-api": "*",
+    "minecraft": ">1.20.1"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.source": "https://github.com/splittque/Presencium"
+      },
+      "update_checker": true
+    }
+  }
+}
