@@ -1,0 +1,7 @@
+{
+  "single_state": "Im Einzelspieler",
+  "multi_state": "Im Mehrspieler",
+  "realm_state": "Im Realms",
+  "main_state": "Im Spiel",
+  "server_ip": "Server IP anzeigen"
+}
