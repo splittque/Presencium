@@ -1,0 +1,25 @@
+plugins {
+    id 'fabric-loom' version '1.6-SNAPSHOT'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+archivesBaseName = "presencium"
+version = "2.0"
+
+repositories {
+    jcenter()
+	maven { url = "https://jitpack.io/" }
+	maven { url = "https://maven.terraformersmc.com" }
+}
+
+// https://fabricmc.net/develop/
+dependencies {
+    minecraft "com.mojang:minecraft:1.20.4"
+    mappings "net.fabricmc:yarn:1.20.4+build.3"
+    modImplementation "net.fabricmc:fabric-loader:0.15.11"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.97.0+1.20.4"
+    modImplementation "com.terraformersmc:modmenu:9.0.0"
+    include (implementation "org.json:json:20230618")
+    include (implementation "club.minnced:discord-rpc-release:v3.4.0")
+    include (implementation "com.github.MinnDevelopment:java-discord-rpc:v2.0.2")
+}
