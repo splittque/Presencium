@@ -1,0 +1,7 @@
+{
+  "single_state": "シングルプレイヤーゲームでは",
+  "multi_state": "ネットワークゲーム",
+  "realm_state": "で Realms",
+  "main_state": "試合の中で",
+  "server_ip": "サーバーIPの表示"
+}

@@ -1,0 +1,7 @@
+{
+  "single_state": "В одиночной игре",
+  "multi_state": "В сетевой игре",
+  "realm_state": "В Realms",
+  "main_state": "В игре",
+  "server_ip": "Показывать IP сервера"
+}
