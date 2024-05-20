@@ -1,0 +1,19 @@
+plugins {
+	id 'maven-publish'
+	id 'org.quiltmc.loom' version '1.4.2'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+archivesBaseName = "presencium"
+
+// https://quiltmc.org/en/usage/latest-versions
+dependencies {
+	minecraft "com.mojang:minecraft:1.20.4"
+	mappings "org.quiltmc:quilt-mappings:1.20.4+build.3"
+	modImplementation "org.quiltmc:quilt-loader:0.25.0"
+	modImplementation "org.quiltmc.quilted-fabric-api:quilted-fabric-api:9.0.0-alpha.8+0.97.0-1.20.4"
+	modImplementation "com.terraformersmc:modmenu:8.0.0"
+	include (implementation "org.json:json:20230618")
+	include (implementation "club.minnced:discord-rpc-release:v3.4.0")
+	include (implementation "com.github.MinnDevelopment:java-discord-rpc:v2.0.2")
+}

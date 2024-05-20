@@ -1,0 +1,35 @@
+{
+    "schema_version": 1,
+    "quilt_loader": {
+        "group": "me.splittque",
+        "id": "presencium",
+        "version": "2.0",
+        "metadata": {
+            "name": "presencium",
+            "description": "Minecraft status in discord!",
+            "contributors": {
+                "splittque": "creator"
+            },
+            "contact": {},
+            "icon": "icon.png"
+        },
+        "intermediate_mappings": "net.fabricmc:intermediary",
+        "entrypoints": {
+            "init": "me.splitque.presencium.main"
+        },
+        "depends": [
+            {
+                "id": "quilt_loader",
+                "versions": ">=0.19.1"
+            },
+            {
+                "id": "quilted_fabric_api",
+                "versions": ">=7.0.2"
+            },
+            {
+                "id": "minecraft",
+                "versions": ">=1.20"
+            }
+        ]
+    }
+}
