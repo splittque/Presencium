@@ -4,7 +4,7 @@ plugins {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 archivesBaseName = "presencium"
-version = "2.0"
+version = "2.1"
 
 repositories {
     jcenter()
