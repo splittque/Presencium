@@ -3,9 +3,11 @@ package me.splitque.presencium;
 import club.minnced.discord.rpc.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import me.splitque.presencium.config.config;
 
 public class discord {
     public static final DiscordRPC presencium = DiscordRPC.INSTANCE;
+    public static Boolean isWorking;
     public static final Logger logger = LogManager.getLogger();
     public static final DiscordRichPresence presence = new DiscordRichPresence();
     public static final DiscordEventHandlers handlers = new DiscordEventHandlers();
@@ -18,14 +20,28 @@ public class discord {
         presencium.Discord_UpdatePresence(presence);
 
         handlers.disconnected = (errorCode, message) -> start();
-        handlers.ready = (user) -> logger.info("[Presencium] DiscordRPC has been started!");
+        logger.info("[Presencium] DiscordRPC has been started!");
+        isWorking = true;
     }
     public static void stop() {
         presencium.Discord_Shutdown();
         logger.info("[Presencium] DiscordRPC has been stopped!");
+        isWorking = false;
     }
     public static void update(String state) {
-        presence.details = state;
-        presencium.Discord_UpdatePresence(presence);
+        if (isWorking) {
+            if (config.get("rpc_onoff")) {
+                presence.details = state;
+                presencium.Discord_UpdatePresence(presence);
+            }
+            if (!config.get("rpc_onoff")) {
+                stop();
+            }
+        }
+        if (!isWorking) {
+            if (config.get("rpc_onoff")) {
+                start();
+            }
+        }
     }
 }
