@@ -15,13 +15,21 @@ public class screen extends SimpleOptionsScreen {
                 config.save();
             }
     );
+    private static final SimpleOption<Boolean> rpc_onoff = SimpleOption.ofBoolean(
+            "rpc_onoff",
+            config.get("rpc_onoff"),
+            value -> {
+                config.set("rpc_onoff", value);
+                config.save();
+            }
+    );
 
     public screen(Screen parent) {
         super(
                 parent,
                 MinecraftClient.getInstance().options,
                 Text.of("Presencium"),
-                new SimpleOption[]{server_ip}
+                new SimpleOption[]{server_ip, rpc_onoff}
         );
     }
 }

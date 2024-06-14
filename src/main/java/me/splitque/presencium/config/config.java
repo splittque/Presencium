@@ -27,6 +27,9 @@ public class config {
             if (json.isNull("server_ip")) {
                 json.put("server_ip", true);
             }
+            if (json.isNull("rpc_onoff")) {
+                json.put("rpc_onoff", true);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             save();
