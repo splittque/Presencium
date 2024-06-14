@@ -3,5 +3,6 @@
   "multi_state": "在网络游戏中",
   "realm_state": "在 Realms",
   "main_state": "在游戏中",
-  "server_ip": "显示服务器 IP"
+  "server_ip": "显示服务器 IP",
+  "rpc_onoff": "RPC"
 }

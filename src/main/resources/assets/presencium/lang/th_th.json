@@ -3,5 +3,6 @@
   "multi_state": "ในเกมออนไลน์",
   "realm_state": "ใน Realms",
   "main_state": "ในเกม",
-  "server_ip": "แสดงไอพีเซิร์ฟเวอร์"
+  "server_ip": "แสดงไอพีเซิร์ฟเวอร์",
+  "rpc_onoff": "RPC"
 }

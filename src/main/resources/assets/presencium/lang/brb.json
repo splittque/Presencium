@@ -3,5 +3,6 @@
   "multi_state": "In de multiplayer game",
   "realm_state": "In de Realms",
   "main_state": "In de game",
-  "server_ip": "Toon server IP"
+  "server_ip": "Toon server IP",
+  "rpc_onoff": "RPC"
 }

@@ -3,5 +3,6 @@
   "multi_state": "In multiplayer",
   "realm_state": "In Realms",
   "main_state": "In game",
-  "server_ip": "Show server IP"
+  "server_ip": "Show server IP",
+  "rpc_onoff": "RPC"
 }

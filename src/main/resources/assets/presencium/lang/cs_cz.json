@@ -3,5 +3,6 @@
   "multi_state": "V online hře",
   "realm_state": "V Realms",
   "main_state": "V hře",
-  "server_ip": "Zobrazit IP serveru"
+  "server_ip": "Zobrazit IP serveru",
+  "rpc_onoff": "RPC"
 }

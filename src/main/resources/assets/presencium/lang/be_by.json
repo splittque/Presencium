@@ -3,5 +3,6 @@
   "multi_state": "У сеткавай гульні",
   "realm_state": "У Realms",
   "main_state": "У гульні",
-  "server_ip": "Паказваць IP сервера"
+  "server_ip": "Паказваць IP сервера",
+  "rpc_onoff": "RPC"
 }

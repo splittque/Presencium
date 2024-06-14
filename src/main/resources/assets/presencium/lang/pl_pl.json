@@ -3,5 +3,6 @@
   "multi_state": "W grze sieciowej",
   "realm_state": "W Realms",
   "main_state": "W grze",
-  "server_ip": "Pokaż IP serwera"
+  "server_ip": "Pokaż IP serwera",
+  "rpc_onoff": "RPC"
 }

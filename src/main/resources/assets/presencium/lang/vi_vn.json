@@ -3,5 +3,6 @@
   "multi_state": "Trong trực tuyến",
   "realm_state": "Trong Realms",
   "main_state": "Trong chơi",
-  "server_ip": "HIỂN THỊ IP máy chủ"
+  "server_ip": "HIỂN THỊ IP máy chủ",
+  "rpc_onoff": "RPC"
 }

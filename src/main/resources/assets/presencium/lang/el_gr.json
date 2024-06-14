@@ -3,5 +3,6 @@
   "multi_state": "Σε ένα δικτυακό παιχνίδι",
   "realm_state": "Σε Realms",
   "main_state": "Στο παιχνίδι",
-  "server_ip": "Εμφάνιση IP διακομιστή"
+  "server_ip": "Εμφάνιση IP διακομιστή",
+  "rpc_onoff": "RPC"
 }
