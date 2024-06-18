@@ -2,12 +2,12 @@ package me.splitque.presencium.config;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.option.SimpleOptionsScreen;
+import net.minecraft.client.gui.screen.option.*;
 import net.minecraft.client.option.SimpleOption;
 import net.minecraft.text.Text;
 
-public class screen extends SimpleOptionsScreen {
-    private static final SimpleOption<Boolean> server_ip = SimpleOption.ofBoolean(
+public class screen extends GameOptionsScreen {
+    private final SimpleOption<Boolean> server_ip = SimpleOption.ofBoolean(
             "server_ip",
             config.get("server_ip"),
             value -> {
@@ -15,7 +15,7 @@ public class screen extends SimpleOptionsScreen {
                 config.save();
             }
     );
-    private static final SimpleOption<Boolean> rpc_onoff = SimpleOption.ofBoolean(
+    public final SimpleOption<Boolean> rpc_onoff = SimpleOption.ofBoolean(
             "rpc_onoff",
             config.get("rpc_onoff"),
             value -> {
@@ -24,12 +24,16 @@ public class screen extends SimpleOptionsScreen {
             }
     );
 
-    public screen(Screen parent) {
+    @Override
+    protected void addOptions() {
+        this.body.addAll(server_ip, rpc_onoff);
+    }
+
+    public screen(Screen screen) {
         super(
-                parent,
+                screen,
                 MinecraftClient.getInstance().options,
-                Text.of("Presencium"),
-                new SimpleOption[]{server_ip, rpc_onoff}
+                Text.of("Presencium")
         );
     }
 }
