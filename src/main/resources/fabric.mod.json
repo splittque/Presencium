@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "presencium",
-  "version": "2.1",
+  "version": "2.1.1",
   "name": "Presencium",
   "description": "Minecraft status in discord!",
   "authors": [
