@@ -3,7 +3,7 @@ plugins {
 }
 
 archivesBaseName = "presencium"
-version = "2.1"
+version = "2.1.1"
 
 repositories {
     jcenter()
