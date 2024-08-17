@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "presencium",
-  "version": "2.1.1",
+  "version": "${version}",
   "name": "Presencium",
   "description": "Minecraft status in discord!",
   "authors": [
@@ -23,7 +23,6 @@
   },
   "depends": {
     "fabricloader": "*",
-    "fabric-api": "*",
     "minecraft": ">1.20.6"
   },
   "custom": {
