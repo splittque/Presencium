@@ -3,12 +3,12 @@ plugins {
 }
 
 archivesBaseName = "presencium"
-version = "2.1.1"
+version = project.version
 
 repositories {
-    jcenter()
-	maven { url = "https://jitpack.io/" }
-	maven { url = "https://maven.terraformersmc.com" }
+    maven { url = "https://mirrors.huaweicloud.com/repository/maven" }
+    maven { url = "https://jitpack.io/" }
+    maven { url = "https://maven.terraformersmc.com" }
 }
 
 // https://fabricmc.net/develop/
@@ -16,9 +16,17 @@ dependencies {
     minecraft "com.mojang:minecraft:1.21"
     mappings "net.fabricmc:yarn:1.21+build.2"
     modImplementation "net.fabricmc:fabric-loader:0.15.11"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:0.100.1+1.21"
     modImplementation "com.terraformersmc:modmenu:11.0.0-beta.1"
-    include (implementation "org.json:json:20230618")
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.102.0+1.21"
     include (implementation "club.minnced:discord-rpc-release:v3.4.0")
     include (implementation "com.github.MinnDevelopment:java-discord-rpc:v2.0.2")
+    include (implementation "org.json:json:20230618")
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
 }
