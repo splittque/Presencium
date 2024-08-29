@@ -16,16 +16,20 @@ You can check out states in gallery
 
 ### Build
 
+Requires Java **21+**
+
+Project uses gradle **8.8**
+
 #### IDE
 1. Download a project
 2. Open project in your IDE
 3. Wait initialization
 3. Change the code
+4. Test it with task **runClient**
 4. Build
 
 #### non-IDE
 1. Download project
-2. Open terminal in project and type: **gradlew init**
-3. Change the code
-4. Test the project: **gradlew runClient**
-5. Build the project: **gradlew build**
+2. Change the code
+3. Test the project: **gradlew runClient**
+4. Build the project: **gradlew build**
