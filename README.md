@@ -1,10 +1,16 @@
 # Presencium
 ### Descriprion
-This mod show in discord your minecraft status
+It's simple mod showing in discord minecraft status with prepared states.
+All languages that are represented in Discord are supported.
 
-![Alt text](https://cdn.modrinth.com/data/iNU1UQcw/images/0beca16cf8eb52f9af25c5f3496b4285e231ff81.png)
+![Alt text](https://cdn.modrinth.com/data/iNU1UQcw/images/ad292492d7ac969f767e59b69b5149416e02abbb.png)
+#### States
+You can check out states in gallery
 
-All languages that are represented in Discord are supported
+- In game: state, if you don't playing anywhere
+- In singleplayer: state if you playing in singleplayer and world with open to lan 
+- In multiplayer: state if you playing in multiplayer
+- In Realms: state if you playing in Realms
 
 ### Build
 
