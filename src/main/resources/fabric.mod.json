@@ -8,7 +8,8 @@
     "splittque"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/presencium"
+    "homepage": "https://modrinth.com/mod/presencium",
+    "issues": "https://github.com/splittque/Presencium/issues"
   },
   "license": "Creative Commons Zero v1.0 Universal",
   "icon": "icon.png",
