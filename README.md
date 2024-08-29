@@ -3,6 +3,8 @@
 This is a simple mod that shows in Discord the status of minecraft with prepared states.
 All languages that are represented in Discord are supported.
 
+Requires Fabric.
+
 ![Alt text](https://cdn.modrinth.com/data/iNU1UQcw/images/ad292492d7ac969f767e59b69b5149416e02abbb.png)
 #### States
 You can check out states in gallery
