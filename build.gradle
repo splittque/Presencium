@@ -6,9 +6,11 @@ archivesBaseName = "presencium"
 version = project.version
 
 repositories {
-    maven { url = "https://mirrors.huaweicloud.com/repository/maven" }
     maven { url = "https://jitpack.io/" }
     maven { url = "https://maven.terraformersmc.com" }
+    flatDir {
+        dirs "libs"
+    }
 }
 
 // https://fabricmc.net/develop/
@@ -18,9 +20,9 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:0.15.11"
     modImplementation "com.terraformersmc:modmenu:11.0.0-beta.1"
     modImplementation "net.fabricmc.fabric-api:fabric-api:0.102.0+1.21"
-    include (implementation "club.minnced:discord-rpc-release:v3.4.0")
-    include (implementation "com.github.MinnDevelopment:java-discord-rpc:v2.0.2")
     include (implementation "org.json:json:20230618")
+    include (implementation "jar:discord-rpc-release:v3.4.0")
+    include (implementation "jar:java-discord-rpc:v2.0.2")
 }
 
 processResources {
