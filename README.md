@@ -7,7 +7,7 @@ Requires Fabric.
 
 ![Alt text](https://cdn.modrinth.com/data/iNU1UQcw/images/ad292492d7ac969f767e59b69b5149416e02abbb.png)
 #### States
-You can check out states in gallery
+You can check out states in [gallery](https://modrinth.com/mod/presencium/gallery)
 
 - In game: state, if you don't playing anywhere
 - In singleplayer: state if you playing in singleplayer and world with open to lan 
