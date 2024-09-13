@@ -12,7 +12,6 @@ public class screen extends GameOptionsScreen {
             config.get("server_ip"),
             value -> {
                 config.set("server_ip", value);
-                config.save();
             }
     );
     public final SimpleOption<Boolean> rpc_onoff = SimpleOption.ofBoolean(
@@ -20,7 +19,6 @@ public class screen extends GameOptionsScreen {
             config.get("rpc_onoff"),
             value -> {
                 config.set("rpc_onoff", value);
-                config.save();
             }
     );
 

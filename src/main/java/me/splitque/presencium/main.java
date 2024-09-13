@@ -13,8 +13,8 @@ public class main implements ModInitializer {
     @Override
     public void onInitialize() {
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
-            discord.start();
             config.load();
+            discord.start();
         });
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -44,7 +44,6 @@ public class main implements ModInitializer {
 
         ClientLifecycleEvents.CLIENT_STOPPING.register(client -> {
             discord.stop();
-            config.save();
         });
     }
 }
