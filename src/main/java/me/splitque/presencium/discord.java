@@ -5,18 +5,27 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import me.splitque.presencium.config.config;
 
+import java.time.Instant;
+import java.util.Calendar;
+import java.util.Date;
+
 public class discord {
-    public static final DiscordRPC presencium = DiscordRPC.INSTANCE;
-    public static Boolean isWorking;
-    public static final Logger logger = LogManager.getLogger();
-    public static final DiscordRichPresence presence = new DiscordRichPresence();
-    public static final DiscordEventHandlers handlers = new DiscordEventHandlers();
+    private static DiscordRPC presencium = DiscordRPC.INSTANCE;
+    private static Boolean isWorking;
+    private static Logger logger = LogManager.getLogger();
+    private static DiscordRichPresence presence = new DiscordRichPresence();
+    private static DiscordEventHandlers handlers = new DiscordEventHandlers();
+    private static Calendar calendar = Calendar.getInstance();
 
     public static void start() {
         presencium.Discord_Initialize("1119950313047208006", handlers, true, null);
         presence.startTimestamp = System.currentTimeMillis() / 1000;
         presence.largeImageKey = "mclogo";
-        presence.largeImageText = "Presencium by splittque";
+        if (calendar.get(Calendar.DAY_OF_MONTH) == 23 && calendar.get(Calendar.MONTH) == Calendar.OCTOBER) {
+            presence.largeImageText = "HAPPY BIRTHDAY, PRESENCIUM!";
+        } else {
+            presence.largeImageText = "Presencium by splittque";
+        }
         presencium.Discord_UpdatePresence(presence);
 
         handlers.disconnected = (errorCode, message) -> start();
