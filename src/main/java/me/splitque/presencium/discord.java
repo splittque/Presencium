@@ -4,10 +4,7 @@ import club.minnced.discord.rpc.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import me.splitque.presencium.config.config;
-
-import java.time.Instant;
 import java.util.Calendar;
-import java.util.Date;
 
 public class discord {
     private static DiscordRPC presencium = DiscordRPC.INSTANCE;
