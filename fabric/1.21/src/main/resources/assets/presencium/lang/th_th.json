@@ -1,0 +1,8 @@
+{
+  "single_state": "ในเกมผู้เล่นคนเดียว",
+  "multi_state": "ในเกมออนไลน์",
+  "realm_state": "ใน Realms",
+  "main_state": "ในเกม",
+  "server_ip": "แสดงไอพีเซิร์ฟเวอร์",
+  "rpc_onoff": "RPC"
+}

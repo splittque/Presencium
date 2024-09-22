@@ -1,0 +1,8 @@
+{
+  "single_state": "एक एकल खिलाड़ी खेल में",
+  "multi_state": "एक ऑनलाइन गेम में",
+  "realm_state": "में Realms",
+  "main_state": "खेल में",
+  "server_ip": "सर्वर आईपी दिखाएं",
+  "rpc_onoff": "RPC"
+}

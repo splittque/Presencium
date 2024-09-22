@@ -1,0 +1,8 @@
+{
+  "single_state": "Yksinpelissä",
+  "multi_state": "Verkkopelissä",
+  "realm_state": "In Realms",
+  "main_state": "Pelissä",
+  "server_ip": "Näytä palvelimen IP",
+  "rpc_onoff": "RPC"
+}

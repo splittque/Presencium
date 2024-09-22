@@ -1,0 +1,8 @@
+{
+  "single_state": "Az egyjátékos játékban",
+  "multi_state": "Az online játékban",
+  "realm_state": "Az Realms",
+  "main_state": "Az játékban",
+  "server_ip": "Kiszolgáló IP megjelenítése",
+  "rpc_onoff": "RPC"
+}

@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = "me.splitque"
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    libToJar
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: '*.jar')
+    compileOnly 'net.java.dev.jna:jna:5.15.0'
+    compileOnly 'org.apache.logging.log4j:log4j-core:2.24.0'
+
+    libToJar fileTree(dir: 'libs', include: '*.jar')
+}
+
+jar {
+    from {
+        configurations.libToJar.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}

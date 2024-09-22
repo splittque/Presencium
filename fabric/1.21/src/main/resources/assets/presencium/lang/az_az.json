@@ -1,0 +1,8 @@
+{
+  "single_state": "Tək oyunçu oyununda",
+  "multi_state": "Onlayn oyunda",
+  "realm_state": "V Realms",
+  "main_state": "Oyunda",
+  "server_ip": "IP serverini göstərin",
+  "rpc_onoff": "RPC"
+}

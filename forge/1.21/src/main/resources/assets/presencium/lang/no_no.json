@@ -1,0 +1,8 @@
+{
+  "single_state": "I et enspillerspill",
+  "multi_state": "I et nettverksspill",
+  "realm_state": "I et Realms",
+  "main_state": "I et spillet",
+  "server_ip": "Vis server IP",
+  "rpc_onoff": "RPC"
+}

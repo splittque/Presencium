@@ -1,8 +1,0 @@
-{
-  "single_state": "I enspelarspelet",
-  "multi_state": "I nätverksspelet",
-  "realm_state": "I Realms",
-  "main_state": "I spelet",
-  "server_ip": "Visa serverns IP",
-  "rpc_onoff": "RPC"
-}

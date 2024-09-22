@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[0,)"
+license="Creative Commons Zero v1.0 Universal"
+issueTrackerURL="https://docs.google.com/forms/d/1B_7RSgaBO8zphI8K-QgTZ1Y4tMWINRAnSexa93IH0_s"
+
+[[mods]]
+modId="presencium"
+version="${version}"
+displayName="Presencium"
+displayURL="https://modrinth.com/mod/presencium"
+authors="splittque"
+logoFile="icon.png"
+description='''Minecraft status in discord!'''
+
+[[dependencies.presencium]]
+modId="forge"
+mandatory=true
+versionRange="[0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.presencium]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21,1.22)"
+ordering="NONE"
+side="BOTH"
