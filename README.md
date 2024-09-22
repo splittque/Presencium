@@ -33,13 +33,16 @@ Project uses gradle **8.8**
 3. Change the code
 
 **common**
+
 4. Build with task **build**
 
 **fabric**
+
 4. Test with task **runClient**
 5. Build with task **build**
 
 **forge**
+
 4. Test with task **runClient**
 5. Build with task **jarJar**
 
@@ -48,15 +51,18 @@ Project uses gradle **8.8**
 2. Change the code
 
 **common**
+
 3. Clean with command **gradlew common:clean**
 4. Build with command **gradlew common:build**
 
 **fabric**
+
 3. Clean with command **gradlew fabric:(version):clean**
 4. Test with command **gradlew fabric:(version):runClient**
 5. Build with command **gradlew fabric:(version):build**
 
 **forge**
+
 3. Clean with command **gradlew forge:(version):clean**
 4. Test with command **gradlew forge:(version):runClient**
 5. Build with command **gradlew forge:(version):jarJar**
