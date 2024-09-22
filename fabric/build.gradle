@@ -4,7 +4,6 @@ plugins {
 
 subprojects {
     version = project.version + "-fabric"
-
     repositories {
         maven { url = "https://maven.terraformersmc.com" }
     }
