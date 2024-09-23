@@ -18,7 +18,7 @@ public class DiscordHandler {
         presencium.Discord_Initialize("1119950313047208006", handlers, true, null);
         presence.startTimestamp = System.currentTimeMillis() / 1000;
         presence.largeImageKey = "mclogo";
-        if (calendar.get(Calendar.DAY_OF_MONTH) == 23 && calendar.get(Calendar.MONTH) == Calendar.OCTOBER) {
+        if (calendar.get(Calendar.DAY_OF_MONTH) == 26 && calendar.get(Calendar.MONTH) == Calendar.OCTOBER) {
             presence.largeImageText = "HAPPY BIRTHDAY, PRESENCIUM!";
         } else {
             presence.largeImageText = "Presencium by splittque";
