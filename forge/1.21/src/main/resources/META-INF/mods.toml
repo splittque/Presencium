@@ -1,7 +1,7 @@
 modLoader="javafml"
 loaderVersion="[0,)"
 license="Creative Commons Zero v1.0 Universal"
-issueTrackerURL="https://docs.google.com/forms/d/1B_7RSgaBO8zphI8K-QgTZ1Y4tMWINRAnSexa93IH0_s"
+issueTrackerURL="https://github.com/splittque/Presencium/issues"
 
 [[mods]]
 modId="presencium"
