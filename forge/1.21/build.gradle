@@ -1,6 +1,7 @@
 plugins {
     id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
 }
+archivesBaseName = 'presencium'
 jarJar.enable()
 
 minecraft {
@@ -11,21 +12,10 @@ minecraft {
         configureEach {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'info'
         }
         client {
             property 'forge.enabledGameTestNamespaces', "presencium"
-        }
-        server {
-            property 'forge.enabledGameTestNamespaces', "presencium"
-            args '--nogui'
-        }
-        gameTestServer {
-            property 'forge.enabledGameTestNamespaces', "presencium"
-        }
-        data {
-            workingDirectory project.file('run-data')
-            args '--mod', "presencium", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
 }
@@ -34,13 +24,9 @@ dependencies {
     minecraft "net.minecraftforge:forge:1.21.1-52.0.16"
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
     minecraftLibrary "me.splitque:common"
-    jarJar(group: 'me.splitque', name: 'common', version: '[2.0,3.0)') {
-        jarJar.pin(it, '3.0')
+    jarJar(group: 'me.splitque', name: 'common', version: '[1.0,2.0)') {
+        jarJar.pin(it, '1.0')
     }
-}
-
-jarJar {
-    archivesBaseName = 'presencium'
 }
 
 processResources {
@@ -52,4 +38,16 @@ processResources {
     filesMatching('META-INF/mods.toml') {
         expand replaceProperties + [project: project]
     }
+}
+sourceSets {
+    main {
+        resources {
+            srcDir project(':forge').file('src/main/resources')
+        }
+    }
+}
+sourceSets.each {
+    def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = dir
+    it.java.destinationDirectory = dir
 }

@@ -3,6 +3,7 @@ plugins {
 }
 
 group = "me.splitque"
+version = '1.0'
 
 repositories {
     mavenCentral()
@@ -13,7 +14,7 @@ configurations {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: '*.jar')
+    compileOnly fileTree(dir: 'libs', include: '*.jar')
     compileOnly 'net.java.dev.jna:jna:5.15.0'
     compileOnly 'org.apache.logging.log4j:log4j-core:2.24.0'
 
