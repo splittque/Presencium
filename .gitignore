@@ -13,3 +13,5 @@
 /.readme/
 /forge/build/
 /fabric/build/
+/fabric/.gradle/
+/forge/1.21/run-data/
