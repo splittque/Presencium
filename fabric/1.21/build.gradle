@@ -13,6 +13,13 @@ dependencies {
     include(implementation "me.splitque:common")
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDir project(':fabric').file('src/main/resources')
+        }
+    }
+}
 processResources {
     inputs.property "version", rootProject.version
 
