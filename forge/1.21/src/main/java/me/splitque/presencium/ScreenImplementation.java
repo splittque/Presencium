@@ -4,7 +4,7 @@ import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModLoadingContext;
 
 public class ScreenImplementation {
-    public static void registerModsPage() {
+    public static void registerSettingsScreen() {
         ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class,
                 () -> new ConfigScreenHandler.ConfigScreenFactory((client, parent) -> new SettingsScreen(parent)));
     }

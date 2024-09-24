@@ -16,24 +16,24 @@ import me.splitque.common.DiscordHandler;
 @Mod("presencium")
 public class Main {
     public static Minecraft mc = Minecraft.getInstance();
-    String path = String.valueOf(mc.gameDirectory.toPath().resolve("config"));;
+    String path = String.valueOf(mc.gameDirectory.toPath().resolve("config"));
 
-    public Main() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public Main(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::start);
     }
     private void start(FMLCommonSetupEvent e) {
         DiscordHandler.start();
         Settings.load(path);
-        ScreenImplementation.registerModsPage();
+        ScreenImplementation.registerSettingsScreen();
     }
 
     @Mod.EventBusSubscriber(modid = "presencium")
-    public static class events {
+    public static class Events {
         public static String state = "";
 
         @SubscribeEvent
-        public static void discordupdate(TickEvent.ClientTickEvent e) {
+        public static void discordUpdater(TickEvent.ClientTickEvent e) {
             if (e.phase == TickEvent.Phase.END) {
                 if (mc.isSingleplayer()) {
                     state = I18n.get("single_state");
