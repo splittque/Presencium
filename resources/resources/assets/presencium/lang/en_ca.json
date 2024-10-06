@@ -1,0 +1,8 @@
+{
+  "single_state": "In singleplayer",
+  "multi_state": "In multiplayer",
+  "realm_state": "In Realms",
+  "main_state": "In game",
+  "show_server_ip": "Show server IP",
+  "rpc_switcher": "RPC"
+}

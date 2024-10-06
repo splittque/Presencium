@@ -1,0 +1,8 @@
+{
+  "single_state": "Im Einzelspieler",
+  "multi_state": "Im Mehrspieler",
+  "realm_state": "Im Realms",
+  "main_state": "Im Spiel",
+  "show_server_ip": "Server IP anzeigen",
+  "rpc_switcher": "RPC"
+}

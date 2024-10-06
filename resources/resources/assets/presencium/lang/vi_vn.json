@@ -1,0 +1,8 @@
+{
+  "single_state": "Trong chơi đơn",
+  "multi_state": "Trong trực tuyến",
+  "realm_state": "Trong Realms",
+  "main_state": "Trong chơi",
+  "show_server_ip": "HIỂN THỊ IP máy chủ",
+  "rpc_switcher": "RPC"
+}

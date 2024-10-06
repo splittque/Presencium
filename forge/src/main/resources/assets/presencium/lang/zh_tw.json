@@ -1,8 +1,0 @@
-{
-  "single_state": "在單人遊戲中",
-  "multi_state": "在網路遊戲中",
-  "realm_state": "在 Realms",
-  "main_state": "在遊戲中",
-  "server_ip": "顯示伺服器 IP 位址",
-  "rpc_onoff": "RPC"
-}

@@ -1,8 +1,0 @@
-{
-  "single_state": "În singur jucător",
-  "multi_state": "În multi jucător",
-  "realm_state": "În Realms",
-  "main_state": "În jucător",
-  "server_ip": "Arată IP-ul serverului",
-  "rpc_onoff": "RPC"
-}

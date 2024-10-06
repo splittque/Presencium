@@ -1,8 +1,0 @@
-{
-  "single_state": "В играта за един играч",
-  "multi_state": "В мрежова игра",
-  "realm_state": "В Realms",
-  "main_state": "В играта",
-  "server_ip": "Показване на IP сървъра",
-  "rpc_onoff": "RPC"
-}

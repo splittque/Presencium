@@ -1,0 +1,8 @@
+{
+  "single_state": "싱글플레이어 게임에서",
+  "multi_state": "네트워크 게임에서",
+  "realm_state": "그 안에 Realms",
+  "main_state": "게임에서",
+  "show_server_ip": "서버 IP 표시",
+  "rpc_switcher": "RPC"
+}

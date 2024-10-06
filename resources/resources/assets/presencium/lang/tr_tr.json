@@ -1,0 +1,8 @@
+{
+  "single_state": "Tek oyunculu",
+  "multi_state": "Bir ağ oyununda",
+  "realm_state": "In Realms",
+  "main_state": "Oyunda",
+  "show_server_ip": "Sunucu IP'sini göster",
+  "rpc_switcher": "RPC"
+}

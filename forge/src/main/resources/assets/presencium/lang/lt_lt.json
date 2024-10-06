@@ -1,8 +1,0 @@
-{
-  "single_state": "Vieno žaidėjo žaidime",
-  "multi_state": "Tinklo žaidime",
-  "realm_state": "Į Realms",
-  "main_state": "Žaidime",
-  "server_ip": "Rodyti IP serverį",
-  "rpc_onoff": "RPC"
-}
