@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Calendar;
 
-public class DiscordHandler {
+public class DiscordRPCHandler {
     private static DiscordRPC presencium = DiscordRPC.INSTANCE;
     private static Boolean isWorking;
     private static Logger log = LogManager.getLogger("Presencium");
@@ -25,27 +25,28 @@ public class DiscordHandler {
         }
         presencium.Discord_UpdatePresence(presence);
 
+        handlers.errored = (errorCode, message) -> start();
         handlers.disconnected = (errorCode, message) -> start();
-        log.info("RPC has been started!");
+        handlers.ready = (user) -> log.info("DiscordRPC has been started!");
         isWorking = true;
     }
     public static void stop() {
         presencium.Discord_Shutdown();
-        log.info("RPC has been stopped!");
+        log.info("DiscordRPC has been stopped!");
         isWorking = false;
     }
     public static void update(String state) {
         if (isWorking) {
-            if (Settings.get("rpc_onoff")) {
+            if (SettingsHandler.get("rpc_onoff")) {
                 presence.details = state;
                 presencium.Discord_UpdatePresence(presence);
             }
-            if (!Settings.get("rpc_onoff")) {
+            if (!SettingsHandler.get("rpc_onoff")) {
                 stop();
             }
         }
         if (!isWorking) {
-            if (Settings.get("rpc_onoff")) {
+            if (SettingsHandler.get("rpc_onoff")) {
                 start();
             }
         }
