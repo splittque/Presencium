@@ -8,5 +8,6 @@ pluginManagement {
 
 rootProject.name = 'presencium'
 includeBuild 'common'
-include 'forge', 'forge:1.21'
-include 'fabric', 'fabric:1.21'
+include 'forge'
+include 'fabric'
+include 'resources'
