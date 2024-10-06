@@ -1,5 +1,5 @@
 # Presencium
-## Descriprion
+## Description
 This is a simple mod that shows in Discord the status of minecraft with prepared states.
 All languages that are represented in Discord are supported.
 
