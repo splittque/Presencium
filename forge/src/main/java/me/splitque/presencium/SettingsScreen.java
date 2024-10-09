@@ -8,24 +8,24 @@ import net.minecraft.client.gui.screens.options.OptionsSubScreen;
 import net.minecraft.network.chat.Component;
 
 public class SettingsScreen extends OptionsSubScreen {
-    private final OptionInstance<Boolean> server_ip = OptionInstance.createBoolean(
-            "server_ip",
-            SettingsHandler.get("server_ip"),
+    private final OptionInstance<Boolean> show_server_ip = OptionInstance.createBoolean(
+            "show_server_ip",
+            SettingsHandler.get("show_server_ip"),
             value -> {
-                SettingsHandler.set("server_ip", value);
+                SettingsHandler.set("show_server_ip", value);
             }
     );
-    public final OptionInstance<Boolean> rpc_onoff = OptionInstance.createBoolean(
-            "rpc_onoff",
-            SettingsHandler.get("rpc_onoff"),
+    public final OptionInstance<Boolean> rpc_switcher = OptionInstance.createBoolean(
+            "rpc_switcher",
+            SettingsHandler.get("rpc_switcher"),
             value -> {
-                SettingsHandler.set("rpc_onoff", value);
+                SettingsHandler.set("rpc_switcher", value);
             }
     );
 
     @Override
     protected void addOptions() {
-        this.list.addSmall(server_ip, rpc_onoff);
+        this.list.addSmall(show_server_ip, rpc_switcher);
     }
 
     public SettingsScreen(Screen screen) {

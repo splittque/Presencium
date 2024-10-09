@@ -28,10 +28,10 @@ public class Main implements ModInitializer {
                     state = I18n.get("realm_state");
                 }
 
-                if (SettingsHandler.get("server_ip")) {
+                if (SettingsHandler.get("show_server_ip")) {
                     String address = client.getCurrentServer().ip;
                     state = I18n.get("multi_state") + ": " + address;
-                } else if (!SettingsHandler.get("server_ip")) {
+                } else if (!SettingsHandler.get("show_server_ip")) {
                     state = I18n.get("multi_state");
                 }
             } else {
