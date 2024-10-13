@@ -15,7 +15,7 @@ public class Logging {
     }
     public static void debug(String message, int code) {
         if (SettingsHandler.getOption("debug")) {
-            logger.info("[DEBUG]: " + code + " - " + message);
+            logger.warn("[DEBUG]: " + code + " - " + message);
         }
     }
     public static void stateUpdate(String state) {
