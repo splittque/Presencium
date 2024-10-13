@@ -29,13 +29,16 @@ You can check out settings in [gallery](https://modrinth.com/mod/presencium/gall
 2. Change the code
 
 _for common:_
+
 3. Clean with task **clean** _**(gradlew :common:clean)**_
 4. Build with task **build** _**(gradlew :common:build)**_
 
 _for fabric:_
+
 4. Test with task **runClient** _**(gradlew :fabric:runClient)**_
 5. Build with task **build** _**(gradlew :fabric:build)**_
 
 _for forge:_
+
 4. Test with task **runClient** _**(gradlew :forge:runClient)**_
 5. Build with task **jarJar** _**(gradlew :forge:jarJar)**_
