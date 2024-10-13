@@ -10,16 +10,16 @@ import net.minecraft.network.chat.Component;
 public class SettingsScreen extends OptionsSubScreen {
     private final OptionInstance<Boolean> show_server_ip = OptionInstance.createBoolean(
             "show_server_ip",
-            SettingsHandler.get("show_server_ip"),
+            SettingsHandler.getOption("show_server_ip"),
             value -> {
-                SettingsHandler.set("show_server_ip", value);
+                SettingsHandler.setOption("show_server_ip", value);
             }
     );
     public final OptionInstance<Boolean> rpc_switcher = OptionInstance.createBoolean(
             "rpc_switcher",
-            SettingsHandler.get("rpc_switcher"),
+            SettingsHandler.getOption("rpc_switcher"),
             value -> {
-                SettingsHandler.set("rpc_switcher", value);
+                SettingsHandler.setOption("rpc_switcher", value);
             }
     );
 

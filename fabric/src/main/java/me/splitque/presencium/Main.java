@@ -4,44 +4,64 @@ import me.splitque.common.DiscordRPCHandler;
 import me.splitque.common.SettingsHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.language.I18n;
 
 public class Main implements ModInitializer {
-    String state;
+    String translatedState;
+    String vanillaState;
+    Boolean isInitialized = false;
     Minecraft mc = Minecraft.getInstance();
     String path = String.valueOf(mc.gameDirectory.toPath().resolve("config"));
 
     @Override
     public void onInitialize() {
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
-            SettingsHandler.load(path);
-            DiscordRPCHandler.start();
+            SettingsHandler.loadSettings(path);
+            DiscordRPCHandler.startCallbacks();
+            DiscordRPCHandler.startRPC();
+            isInitialized = true;
         });
 
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (client.isSingleplayer()) {
-                state = I18n.get("single_state");
-            } else if (client.getCurrentServer() != null) {
-                if (client.getCurrentServer().isRealm()) {
-                    state = I18n.get("realm_state");
-                }
+        Runnable stateUpdater = new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    if (isInitialized) {
+                        if (mc.isSingleplayer()) {
+                            translatedState = I18n.get("single_state");
+                            vanillaState = "single_state";
+                        } else if (mc.getCurrentServer() != null) {
+                            if (mc.getCurrentServer().isRealm()) {
+                                translatedState = I18n.get("realm_state");
+                                vanillaState = "realm_state";
+                            }
 
-                if (SettingsHandler.get("show_server_ip")) {
-                    String address = client.getCurrentServer().ip;
-                    state = I18n.get("multi_state") + ": " + address;
-                } else if (!SettingsHandler.get("show_server_ip")) {
-                    state = I18n.get("multi_state");
+                            if (SettingsHandler.getOption("show_server_ip")) {
+                                translatedState = I18n.get("multi_state") + ": " + mc.getCurrentServer().ip;
+                                vanillaState = "multi_state";
+                            } else if (!SettingsHandler.getOption("show_server_ip")) {
+                                translatedState = I18n.get("multi_state");
+                                vanillaState = "multi_state";
+                            }
+                        } else {
+                            translatedState  = I18n.get("main_state");
+                            vanillaState = "main_state";
+                        }
+                        DiscordRPCHandler.updateState(translatedState, vanillaState);
+                    }
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {}
                 }
-            } else {
-                state = I18n.get("main_state");
             }
-            DiscordRPCHandler.update(state);
-        });
+        };
+        Thread thread = new Thread(stateUpdater);
+        thread.setName("Presencium-RPC-State-Updater");
+        thread.start();
 
         ClientLifecycleEvents.CLIENT_STOPPING.register(client -> {
-            DiscordRPCHandler.stop();
+            DiscordRPCHandler.stopRPC();
         });
     }
 }
