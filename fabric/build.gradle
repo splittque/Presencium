@@ -1,8 +1,7 @@
 plugins {
     id 'fabric-loom' version '1.6-SNAPSHOT'
 }
-archivesBaseName = 'presencium'
-version = project.version + "-fabric"
+archivesBaseName = 'presencium-FABRIC'
 
 repositories {
     maven { url = "https://maven.terraformersmc.com" }
@@ -12,7 +11,7 @@ repositories {
 dependencies {
     minecraft "com.mojang:minecraft:1.21"
     mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:0.15.11"
+    modImplementation "net.fabricmc:fabric-loader:0.16.7"
     modImplementation "com.terraformersmc:modmenu:11.0.0-beta.1"
     modImplementation "net.fabricmc.fabric-api:fabric-api:0.104.0+1.21.1"
     include(implementation "me.splitque:common")

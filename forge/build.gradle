@@ -1,8 +1,7 @@
 plugins {
     id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
 }
-archivesBaseName = 'presencium'
-version = project.version + "-forge"
+archivesBaseName = 'presencium-forge'
 jarJar.enable()
 
 minecraft {
@@ -21,6 +20,7 @@ minecraft {
     }
 }
 
+// https://files.minecraftforge.net/net/minecraftforge/forge/
 dependencies {
     minecraft "net.minecraftforge:forge:1.21.1-52.0.16"
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
