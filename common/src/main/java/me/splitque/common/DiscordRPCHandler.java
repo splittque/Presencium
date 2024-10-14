@@ -54,7 +54,7 @@ public class DiscordRPCHandler {
         if (rpcIsStarted != null) {
             if (rpcIsStarted) {
                 if (SettingsHandler.getOption("rpc_switcher")) {
-                    Logging.debug("true", 3);
+                    Logging.debug("true (" + vanillaState + ")", 3);
                     presence.details = translatedState;
                     Logging.stateUpdate(vanillaState);
                     discordRPC.Discord_UpdatePresence(presence);
