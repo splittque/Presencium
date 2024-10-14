@@ -2,6 +2,7 @@ plugins {
     id 'fabric-loom' version '1.6-SNAPSHOT'
 }
 archivesBaseName = 'presencium-FABRIC'
+version = rootProject.version + "+" + rootProject.minecraft_version
 
 repositories {
     maven { url = "https://maven.terraformersmc.com" }
