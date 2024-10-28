@@ -13,7 +13,7 @@ public class SettingsHandler {
     }
     public static void setOption(String name, Boolean value) {
         configHandler.setOption(name, String.valueOf(value));
-        Logging.settingChanged(name, String.valueOf(value));
+        LogHandler.settingChanged(name, String.valueOf(value));
     }
     public static Boolean getOption(String name) {
         return configHandler.getBoolean(name);

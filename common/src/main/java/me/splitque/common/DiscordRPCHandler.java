@@ -17,7 +17,7 @@ public class DiscordRPCHandler {
             public void run() {
                 while (true) {
                     discordRPC.Discord_RunCallbacks();
-                    Logging.debug("callback", 2);
+                    LogHandler.debug("callback", 2);
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {}
@@ -31,11 +31,11 @@ public class DiscordRPCHandler {
 
     public static void startRPC() {
         handlers.ready = (user) -> {
-            Logging.started();
+            LogHandler.started();
             rpcIsStarted = true;
         };
         handlers.disconnected = (errorCode, message) -> {
-            Logging.stopped();
+            LogHandler.stopped();
             rpcIsStarted = false;
         };
         discordRPC.Discord_Initialize("1119950313047208006", handlers, true, null);
@@ -43,35 +43,35 @@ public class DiscordRPCHandler {
         presence.largeImageKey = "mclogo";
         presence.largeImageText = getImageText();
         discordRPC.Discord_UpdatePresence(presence);
-        Logging.debug("rpc init", 1);
+        LogHandler.debug("rpc init", 1);
     }
     public static void stopRPC() {
         discordRPC.Discord_Shutdown();
-        Logging.stopped();
+        LogHandler.stopped();
         rpcIsStarted = false;
     }
     public static void updateState(String translatedState, String vanillaState) {
         if (rpcIsStarted != null) {
             if (rpcIsStarted) {
                 if (SettingsHandler.getOption("rpc_switcher")) {
-                    Logging.debug("true (" + vanillaState + ")", 3);
+                    LogHandler.debug("true (" + vanillaState + ")", 3);
                     presence.details = translatedState;
-                    Logging.stateUpdate(vanillaState);
+                    LogHandler.stateUpdate(vanillaState);
                     discordRPC.Discord_UpdatePresence(presence);
                 }
                 if (!SettingsHandler.getOption("rpc_switcher")) {
-                    Logging.debug("false", 3);
+                    LogHandler.debug("false", 3);
                     stopRPC();
                 }
             }
             if (!rpcIsStarted) {
                 if (SettingsHandler.getOption("rpc_switcher")) {
-                    Logging.debug("true", 4);
+                    LogHandler.debug("true", 4);
                     startRPC();
                 }
             }
         } else {
-            Logging.debug("false", 5);
+            LogHandler.debug("false", 5);
             rpcIsStarted = false;
         }
     }
