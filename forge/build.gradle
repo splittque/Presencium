@@ -2,7 +2,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
 }
 archivesBaseName = 'presencium-FORGE'
-version = rootProject.version + "+" + rootProject.minecraft_version
+version = "v" + rootProject.version + "+" + rootProject.minecraft_version
 jarJar.enable()
 
 minecraft {
