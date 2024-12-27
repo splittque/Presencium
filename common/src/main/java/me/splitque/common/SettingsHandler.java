@@ -1,15 +1,16 @@
 package me.splitque.common;
 
-import me.splitque.configuration.ConfigHandler;
+import me.splitque.configuration.Configuration;
+import me.splitque.configuration.handlers.Properties;
 
 public class SettingsHandler {
-    public static ConfigHandler configHandler;
+    private static Configuration configHandler;
 
     public static void loadSettings(String path) {
-        configHandler = new ConfigHandler(false, path, "presencium", "PROPERTIES");
-        configHandler.putOption("rpc_switcher", "true");
-        configHandler.putOption("show_server_ip", "true");
-        configHandler.putOption("debug", "false");
+        configHandler = new Configuration("presencium.properties", new Properties(), path);
+        configHandler.addOption("rpc_switcher", "true");
+        configHandler.addOption("show_server_ip", "true");
+        configHandler.addOption("debug", "false");
     }
     public static void setOption(String name, Boolean value) {
         configHandler.setOption(name, String.valueOf(value));

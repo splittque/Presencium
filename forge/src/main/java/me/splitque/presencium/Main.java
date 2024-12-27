@@ -27,8 +27,8 @@ public class Main {
     }
     private void start(FMLCommonSetupEvent e) {
         SettingsHandler.loadSettings(path);
-        DiscordRPCHandler.startCallbacks();
         DiscordRPCHandler.startRPC();
+        DiscordRPCHandler.startCheck();
         ScreenImplementation.registerSettingsScreen();
         isInitialized = true;
         stateUpdater();

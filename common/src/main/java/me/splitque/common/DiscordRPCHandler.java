@@ -1,63 +1,80 @@
 package me.splitque.common;
 
-import club.minnced.discord.rpc.*;
+import de.jcm.discordgamesdk.Core;
+import de.jcm.discordgamesdk.CreateParams;
+import de.jcm.discordgamesdk.GameSDKException;
+import de.jcm.discordgamesdk.activity.Activity;
 
+import java.io.IOException;
+import java.time.Instant;
 import java.util.Calendar;
 
 public class DiscordRPCHandler {
     private static Boolean rpcIsStarted;
-    private static DiscordRPC discordRPC = DiscordRPC.INSTANCE;
-    private static DiscordRichPresence presence = new DiscordRichPresence();
-    private static DiscordEventHandlers handlers = new DiscordEventHandlers();
+    private static CreateParams params;
+    private static Core core;
+    private static Activity activity;
     private static Calendar calendar = Calendar.getInstance();
 
-    public static void startCallbacks() {
-        Runnable callbacks = new Runnable() {
+    public static void startCheck() {
+        Runnable check = new Runnable() {
             @Override
             public void run() {
                 while (true) {
-                    discordRPC.Discord_RunCallbacks();
-                    LogHandler.debug("callback", 2);
+                    if (core != null) rpcIsStarted = core.isDiscordRunning();
+                    if (core == null) rpcIsStarted = false;
+                    LogHandler.debug("check", 2);
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {}
                 }
             }
         };
-        Thread thread = new Thread(callbacks);
-        thread.setName("Presencium-RPC-Callbacks");
+        Thread thread = new Thread(check);
+        thread.setName("Presencium-RPC-Check");
         thread.start();
     }
 
     public static void startRPC() {
-        handlers.ready = (user) -> {
+        params = new CreateParams();
+
+        params.setClientID(Long.parseLong("1119950313047208006"));
+        params.setFlags(CreateParams.Flags.NO_REQUIRE_DISCORD);
+
+        try {
+            core = new Core(params);
+            activity = new Activity();
+
+            activity.timestamps().setStart(Instant.now());
+            activity.assets().setLargeImage("mclogo");
+            activity.assets().setLargeText(getImageText());
+
+            core.activityManager().updateActivity(activity);
             LogHandler.started();
-            rpcIsStarted = true;
-        };
-        handlers.disconnected = (errorCode, message) -> {
-            LogHandler.stopped();
-            rpcIsStarted = false;
-        };
-        discordRPC.Discord_Initialize("1119950313047208006", handlers, true, null);
-        presence.startTimestamp = System.currentTimeMillis() / 1000;
-        presence.largeImageKey = "mclogo";
-        presence.largeImageText = getImageText();
-        discordRPC.Discord_UpdatePresence(presence);
+        } catch (Exception e) {
+            stopRPC();
+        }
+
         LogHandler.debug("rpc init", 1);
     }
     public static void stopRPC() {
-        discordRPC.Discord_Shutdown();
-        LogHandler.stopped();
-        rpcIsStarted = false;
+        if (core != null) core.close();
+        if (core != null) LogHandler.stopped();
+        core = null;
+        params = null;
+        activity = null;
     }
     public static void updateState(String translatedState, String vanillaState) {
         if (rpcIsStarted != null) {
             if (rpcIsStarted) {
                 if (SettingsHandler.getOption("rpc_switcher")) {
                     LogHandler.debug("true (" + vanillaState + ")", 3);
-                    presence.details = translatedState;
+                    activity.setState(translatedState);
                     LogHandler.stateUpdate(vanillaState);
-                    discordRPC.Discord_UpdatePresence(presence);
+                    try {
+                        core.activityManager().updateActivity(activity);
+                    } catch (Exception e) {}
+
                 }
                 if (!SettingsHandler.getOption("rpc_switcher")) {
                     LogHandler.debug("false", 3);
@@ -72,7 +89,6 @@ public class DiscordRPCHandler {
             }
         } else {
             LogHandler.debug("false", 5);
-            rpcIsStarted = false;
         }
     }
 

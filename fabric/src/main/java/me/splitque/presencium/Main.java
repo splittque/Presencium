@@ -18,8 +18,8 @@ public class Main implements ModInitializer {
     public void onInitialize() {
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
             SettingsHandler.loadSettings(path);
-            DiscordRPCHandler.startCallbacks();
             DiscordRPCHandler.startRPC();
+            DiscordRPCHandler.startCheck();
             isInitialized = true;
         });
 
