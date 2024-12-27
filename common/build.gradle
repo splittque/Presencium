@@ -13,7 +13,6 @@ configurations {
 
 dependencies {
     compileOnly fileTree(dir: 'libs', include: '*.jar')
-    compileOnly 'net.java.dev.jna:jna:5.15.0'
     compileOnly 'org.apache.logging.log4j:log4j-core:2.24.0'
 
     libToJar fileTree(dir: 'libs', include: '*.jar')
