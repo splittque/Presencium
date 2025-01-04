@@ -11,9 +11,12 @@ public class SettingsHandler {
         configHandler.addOption("rpc_switcher", "true");
         configHandler.addOption("show_server_ip", "true");
         configHandler.addOption("debug", "false");
+        configHandler.save();
+        LogHandler.settingsLoaded();
     }
     public static void setOption(String name, Boolean value) {
         configHandler.setOption(name, String.valueOf(value));
+        configHandler.save();
         LogHandler.settingChanged(name, String.valueOf(value));
     }
     public static Boolean getOption(String name) {

@@ -23,7 +23,7 @@ public class DiscordRPCHandler {
                 while (true) {
                     if (core != null) rpcIsStarted = core.isDiscordRunning();
                     if (core == null) rpcIsStarted = false;
-                    LogHandler.debug("check", 2);
+                    LogHandler.debug("check", 2, SettingsHandler.getOption("debug"));
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {}
@@ -55,7 +55,7 @@ public class DiscordRPCHandler {
             stopRPC();
         }
 
-        LogHandler.debug("rpc init", 1);
+        LogHandler.debug("rpc init", 1, SettingsHandler.getOption("debug"));
     }
     public static void stopRPC() {
         if (core != null) core.close();
@@ -68,7 +68,7 @@ public class DiscordRPCHandler {
         if (rpcIsStarted != null) {
             if (rpcIsStarted) {
                 if (SettingsHandler.getOption("rpc_switcher")) {
-                    LogHandler.debug("true (" + vanillaState + ")", 3);
+                    LogHandler.debug("true (" + vanillaState + ")", 3, SettingsHandler.getOption("debug"));
                     activity.setState(translatedState);
                     LogHandler.stateUpdate(vanillaState);
                     try {
@@ -77,18 +77,18 @@ public class DiscordRPCHandler {
 
                 }
                 if (!SettingsHandler.getOption("rpc_switcher")) {
-                    LogHandler.debug("false", 3);
+                    LogHandler.debug("false", 3, SettingsHandler.getOption("debug"));
                     stopRPC();
                 }
             }
             if (!rpcIsStarted) {
                 if (SettingsHandler.getOption("rpc_switcher")) {
-                    LogHandler.debug("true", 4);
+                    LogHandler.debug("true", 4, SettingsHandler.getOption("debug"));
                     startRPC();
                 }
             }
         } else {
-            LogHandler.debug("false", 5);
+            LogHandler.debug("false", 5, SettingsHandler.getOption("debug"));
         }
     }
 
