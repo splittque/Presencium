@@ -1,25 +1,26 @@
 package me.splitque.common;
 
-import me.splitque.configuration.Configuration;
-import me.splitque.configuration.handlers.Properties;
+import tools.configurator.Configurator;
+import tools.configurator.serializators.PropertiesConfigurator;
 
 public class SettingsHandler {
-    private static Configuration configHandler;
+    private static Configurator configHandler;
 
     public static void loadSettings(String path) {
-        configHandler = new Configuration("presencium.properties", new Properties(), path);
-        configHandler.addOption("rpc_switcher", "true");
-        configHandler.addOption("show_server_ip", "true");
-        configHandler.addOption("debug", "false");
+        configHandler = new PropertiesConfigurator("presencium.properties", path);
+        configHandler.load();
+        configHandler.addBoolean("rpc_switcher", true);
+        configHandler.addBoolean("show_server_ip", true);
+        configHandler.addBoolean("debug", false);
         configHandler.save();
         LogHandler.settingsLoaded();
     }
-    public static void setOption(String name, Boolean value) {
-        configHandler.setOption(name, String.valueOf(value));
+    public static void setOption(String key, Boolean value) {
+        configHandler.setBoolean(key, value);
         configHandler.save();
-        LogHandler.settingChanged(name, String.valueOf(value));
+        LogHandler.settingChanged(key, String.valueOf(value));
     }
-    public static Boolean getOption(String name) {
-        return configHandler.getBoolean(name);
+    public static Boolean getOption(String key) {
+        return configHandler.getBoolean(key);
     }
 }
