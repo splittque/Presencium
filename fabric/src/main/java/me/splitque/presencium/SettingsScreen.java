@@ -15,17 +15,24 @@ public class SettingsScreen extends OptionsSubScreen {
                 SettingsHandler.setOption("show_server_ip", value);
             }
     );
-    public final OptionInstance<Boolean> rpc_switcher = OptionInstance.createBoolean(
+    private final OptionInstance<Boolean> rpc_switcher = OptionInstance.createBoolean(
             "rpc_switcher",
             SettingsHandler.getOption("rpc_switcher"),
             value -> {
                 SettingsHandler.setOption("rpc_switcher", value);
             }
     );
+    private final OptionInstance<Boolean> debug = OptionInstance.createBoolean(
+            "debug",
+            SettingsHandler.getOption("debug"),
+            value -> {
+                SettingsHandler.setOption("debug", value);
+            }
+    );
 
     @Override
     protected void addOptions() {
-        this.list.addSmall(show_server_ip, rpc_switcher);
+        this.list.addSmall(show_server_ip, rpc_switcher, debug);
     }
 
     public SettingsScreen(Screen screen) {
