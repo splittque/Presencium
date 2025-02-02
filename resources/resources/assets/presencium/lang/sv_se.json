@@ -4,5 +4,6 @@
   "realm_state": "I Realms",
   "main_state": "I spelet",
   "show_server_ip": "Visa serverns IP",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

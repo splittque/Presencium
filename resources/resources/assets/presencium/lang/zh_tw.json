@@ -4,5 +4,6 @@
   "realm_state": "在 Realms",
   "main_state": "在遊戲中",
   "show_server_ip": "顯示伺服器 IP 位址",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

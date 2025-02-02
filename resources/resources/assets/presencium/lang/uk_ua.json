@@ -4,5 +4,6 @@
   "realm_state": "У Realms",
   "main_state": "У грі",
   "show_server_ip": "Показувати IP сервера",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

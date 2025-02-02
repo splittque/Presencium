@@ -4,5 +4,6 @@
   "realm_state": "그 안에 Realms",
   "main_state": "게임에서",
   "show_server_ip": "서버 IP 표시",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

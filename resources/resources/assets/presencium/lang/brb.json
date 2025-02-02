@@ -4,5 +4,6 @@
   "realm_state": "In de Realms",
   "main_state": "In de game",
   "show_server_ip": "Toon server IP",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

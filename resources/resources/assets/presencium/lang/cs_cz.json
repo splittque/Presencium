@@ -4,5 +4,6 @@
   "realm_state": "V Realms",
   "main_state": "V hře",
   "show_server_ip": "Zobrazit IP serveru",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

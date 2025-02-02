@@ -4,5 +4,6 @@
   "realm_state": "Em Realms",
   "main_state": "Em jogo",
   "show_server_ip": "Mostrar o IP do servidor",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

@@ -4,5 +4,6 @@
   "realm_state": "In Realms",
   "main_state": "Oyunda",
   "show_server_ip": "Sunucu IP'sini göster",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

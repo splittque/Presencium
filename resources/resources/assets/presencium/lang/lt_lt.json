@@ -4,5 +4,6 @@
   "realm_state": "Į Realms",
   "main_state": "Žaidime",
   "show_server_ip": "Rodyti IP serverį",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

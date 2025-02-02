@@ -4,5 +4,6 @@
   "realm_state": "Az Realms",
   "main_state": "Az játékban",
   "show_server_ip": "Kiszolgáló IP megjelenítése",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

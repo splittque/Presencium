@@ -4,5 +4,6 @@
   "realm_state": "In Realms",
   "main_state": "Pelissä",
   "show_server_ip": "Näytä palvelimen IP",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

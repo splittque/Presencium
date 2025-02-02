@@ -4,5 +4,6 @@
   "realm_state": "U Realms",
   "main_state": "U igri",
   "show_server_ip": "Prikaži IP poslužitelja",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

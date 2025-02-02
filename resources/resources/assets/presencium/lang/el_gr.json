@@ -4,5 +4,6 @@
   "realm_state": "Σε Realms",
   "main_state": "Στο παιχνίδι",
   "show_server_ip": "Εμφάνιση IP διακομιστή",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

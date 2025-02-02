@@ -4,5 +4,6 @@
   "realm_state": "में Realms",
   "main_state": "खेल में",
   "show_server_ip": "सर्वर आईपी दिखाएं",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }

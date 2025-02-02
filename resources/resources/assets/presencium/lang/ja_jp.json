@@ -4,5 +4,6 @@
   "realm_state": "で Realms",
   "main_state": "試合の中で",
   "show_server_ip": "サーバーIPの表示",
-  "rpc_switcher": "RPC"
+  "rpc_switcher": "RPC",
+  "debug": "Debug"
 }
