@@ -14,8 +14,8 @@ public class LogHandler {
     public static void stopped() {
         log.info("DiscordRPC has been stopped!");
     }
-    public static void debug(String message, int code, boolean showLog) {
-        if (showLog) log.warn("[DEBUG] " + code + ": " + message); // [DEBUG] 1: message
+    public static void debug(String message) {
+        if (SettingsHandler.getOption("debug")) log.warn("[DEBUG] " + message); // [DEBUG] message
     }
     public static void stateUpdate(String state) {
         if (!_state.equals(state)) {

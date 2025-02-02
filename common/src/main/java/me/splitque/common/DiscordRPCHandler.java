@@ -2,14 +2,14 @@ package me.splitque.common;
 
 import de.jcm.discordgamesdk.Core;
 import de.jcm.discordgamesdk.CreateParams;
-import de.jcm.discordgamesdk.GameSDKException;
+
 import de.jcm.discordgamesdk.activity.Activity;
 
-import java.io.IOException;
 import java.time.Instant;
 import java.util.Calendar;
 
 public class DiscordRPCHandler {
+    private static Boolean closed = false;
     private static Boolean rpcIsStarted;
     private static CreateParams params;
     private static Core core;
@@ -17,17 +17,14 @@ public class DiscordRPCHandler {
     private static Calendar calendar = Calendar.getInstance();
 
     public static void startCheck() {
-        Runnable check = new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    if (core != null) rpcIsStarted = core.isDiscordRunning();
-                    if (core == null) rpcIsStarted = false;
-                    LogHandler.debug("check", 2, SettingsHandler.getOption("debug"));
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {}
-                }
+        Runnable check = () -> {
+            while (true) {
+                if (core != null && !closed) rpcIsStarted = core.isDiscordRunning();
+                if (core == null && !closed) rpcIsStarted = false;
+                if (!closed) LogHandler.debug("Checks...");
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {}
             }
         };
         Thread thread = new Thread(check);
@@ -54,8 +51,6 @@ public class DiscordRPCHandler {
         } catch (Exception e) {
             stopRPC();
         }
-
-        LogHandler.debug("rpc init", 1, SettingsHandler.getOption("debug"));
     }
     public static void stopRPC() {
         if (core != null) core.close();
@@ -64,31 +59,38 @@ public class DiscordRPCHandler {
         params = null;
         activity = null;
     }
+    public static void close() {
+        stopRPC();
+        closed = true;
+        rpcIsStarted = null;
+    }
     public static void updateState(String translatedState, String vanillaState) {
         if (rpcIsStarted != null) {
             if (rpcIsStarted) {
                 if (SettingsHandler.getOption("rpc_switcher")) {
-                    LogHandler.debug("true (" + vanillaState + ")", 3, SettingsHandler.getOption("debug"));
                     activity.setState(translatedState);
                     LogHandler.stateUpdate(vanillaState);
                     try {
                         core.activityManager().updateActivity(activity);
                     } catch (Exception e) {}
-
+                    LogHandler.debug("Update state... (rpcIsStarted = true : rpc_switcher = true)");
                 }
                 if (!SettingsHandler.getOption("rpc_switcher")) {
-                    LogHandler.debug("false", 3, SettingsHandler.getOption("debug"));
+                    LogHandler.debug("Shutting down RPC... (rpcIsStarted = true : rpc_switcher = false)");
                     stopRPC();
                 }
             }
             if (!rpcIsStarted) {
                 if (SettingsHandler.getOption("rpc_switcher")) {
-                    LogHandler.debug("true", 4, SettingsHandler.getOption("debug"));
+                    LogHandler.debug("Starting RPC... (rpcIsStarted = false : rpc_switcher = true)");
                     startRPC();
+                }
+                if (!SettingsHandler.getOption("rpc_switcher")) {
+                    LogHandler.debug("Nothing happened... (rpcIsStarted = false : rpc_switcher = false)");
                 }
             }
         } else {
-            LogHandler.debug("false", 5, SettingsHandler.getOption("debug"));
+            LogHandler.debug("Isn't initialized or closed... (rpcIsStarted = null)");
         }
     }
 
